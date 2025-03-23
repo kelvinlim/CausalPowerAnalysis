@@ -141,3 +141,8 @@ discover.py will output to the directory specified by *index* (see above) a csv 
 * oriented_FP
 * oriented_FN
 * algorithm
+
+## Creating simulation data for examining loss of data
+
+See simulate_data.py
+
