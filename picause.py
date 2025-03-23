@@ -543,8 +543,14 @@ class StructuralEquationDagModel(Model):
                     cov_sum = 0.0
                     for parent in parents_u:
                         cov_sum += self.model[u][parent] * cov_matrix[parent][prior_var]
-                    cov_matrix[prior_var][u] = cov_sum
-                    cov_matrix[u][prior_var] = cov_sum
+                    # recode next two lines to address ChainedAssignmentError for
+                    # pandas 3.0 for Copy-on-Write behavior
+                    
+                    # cov_matrix[prior_var][u] = cov_sum
+                    cov_matrix.loc[prior_var, u] = cov_sum
+                    
+                    # cov_matrix[u][prior_var] = cov_sum
+                    cov_matrix.loc[u, prior_var] = cov_sum
         if verbose:
             print('Heres the implied covariance matrix:')
             print(cov_matrix)
