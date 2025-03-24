@@ -93,5 +93,11 @@ for num_data_points in [30, 40, 60, 80, 100, 200]:
             path = os.path.join(data_dir, filename)
             df.to_csv(path, index=False)
             
+            # save graph description to a txt file
+            sem_file = filename.replace('.csv', '.txt')
+            sem_path = os.path.join(data_dir, sem_file)
+            with open(sem_path, 'w') as f:
+                f.write(sem.__str__())
+            
             print(f"{filename} count: {count}")
             pass
