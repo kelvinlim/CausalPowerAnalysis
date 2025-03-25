@@ -1,5 +1,17 @@
 # CausalPowerAnalysis
 
+Fork for doing data simulations
+
+## work flow
+
+To create simulated data which will be stored in sim_data folder.
+
+```
+./simulate_data.py
+```
+
+
+## Original notes
 Code to perform causal power analysis from the [Kummerfeld, Williams, and Ma (2023) paper](https://link.springer.com/article/10.1007/s41060-023-00399-4.).
   
 Uses causal-cmd from the [Center for Causal Discovery](ccd.pitt.edu).

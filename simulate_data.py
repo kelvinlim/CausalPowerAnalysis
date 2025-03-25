@@ -72,15 +72,14 @@ data_dir = 'sim_data/'
 if not os.path.exists(data_dir):
     os.makedirs(data_dir)
 
-num_data_points = 100
-num_iterations = 100
+num_iterations = 10
 num_vars = 15
 num_edges = 27
 
 # try with different number of data points
-for num_data_points in [30, 40, 60, 80, 100, 200]:
+for num_data_points in [100, 500, 1000]:
     # try with a different effect sizes
-    for effect_size in [0.1, 0.3, 0.5, 0.7, 0.9]:
+    for effect_size in [0.1, 0.2, 0.3, 0.4]:
         for iter in range(num_iterations):
             df, sem, count = create_single_df(effect_size=effect_size,
                                     num_data_points=num_data_points)
